@@ -18,7 +18,7 @@ end
 
 data = "This is some data I want to put in my report"
 
-html = Report.call() do |header, footer|
+html = Report.call do |header, footer|
   <<~HTML
     <!DOCTYPE html>
     <head><title>#{header}</title></head>
@@ -29,11 +29,11 @@ html = Report.call() do |header, footer|
   HTML
 end
 
-json = Report.call() do |header, footer|
+json = Report.call do |header, footer|
   { title: header, body: data, footer: footer }.to_json
 end
 
-txt = Report.call() do |header, footer|
+txt = Report.call do |header, footer|
   <<~END
     #{header}
     "#{'-' * 72}"
@@ -46,4 +46,3 @@ end
 puts html
 puts json
 puts txt
-
