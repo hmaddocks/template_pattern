@@ -11,7 +11,6 @@ class Report
 
     def header = "#{year} Report"
     def footer = "#{year} @ Copyright Acme Inc."
-    def spacer = "#{'-' * 72}"
     def year = Date.today.year.to_s
   end
 end
